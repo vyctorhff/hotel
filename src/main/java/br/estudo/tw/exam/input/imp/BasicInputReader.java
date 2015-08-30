@@ -16,11 +16,6 @@ import java.util.Objects;
 @Component
 public class BasicInputReader implements HotelInputReader {
 
-    public static final String ENTRADA_INVALIDA =
-            "input.invalid_input";
-    public static final String MSG_ERROR_CUSTOMER_TYPE =
-            "input.invalid_customer_type";
-
     private String customer;
     private List<String> dates;
 
