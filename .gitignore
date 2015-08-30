@@ -1,0 +1,7 @@
+# arquivos gerados java
+*.class
+
+# arquivos gerados do jasperreports
+*.jasper
+
+target/*
