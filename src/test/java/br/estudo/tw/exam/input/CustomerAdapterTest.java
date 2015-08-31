@@ -5,9 +5,7 @@ import br.estudo.tw.exam.tests.AbstractTests;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * Created by torugo on 31/08/15.
@@ -24,7 +22,7 @@ public class CustomerAdapterTest extends AbstractTests {
     }
 
     @Test
-    public void testDoAdapterWithValidInput() throws Exception {
+    public void testDoAdapterWithRegularCustomer() throws Exception {
         String input = super.loadInputFromFile(super.FILE_INPUT_1);
         hotelInputReader.read(input);
 
@@ -33,9 +31,8 @@ public class CustomerAdapterTest extends AbstractTests {
 
         Customer customer = adapter.getCustomer();
         assertNotNull(customer);
-
         assertNotNull(customer.getType());
-        assertTrue(CustomerTypeEnum.REGULAR.equals(customer.getType()));
+        assertEquals(CustomerTypeEnum.REGULAR, customer.getType());
 
         assertNotNull(customer.getReservations());
         assertEquals(3, customer.getReservations().size());
@@ -43,8 +40,23 @@ public class CustomerAdapterTest extends AbstractTests {
         // verify if the date reservation match with the text
         DateReservation dateReservation = customer.getReservations().iterator().next();
         assertEquals(16, dateReservation.getDay());
-        assertEquals(MothEnum.MARCH, dateReservation.getMoth());
+        assertEquals(MonthEnum.MARCH, dateReservation.getMoth());
         assertEquals(2009, dateReservation.getYear());
         assertEquals(WeekDayEnum.MONDAY, dateReservation.getWeekDay());
+    }
+
+    @Test
+    public void testDoAdapterWithRewardCustomer() throws Exception {
+        fail();
+    }
+
+    @Test
+    public void testDoAdapterWithAllWeekDays() throws Exception {
+        fail();
+    }
+
+    @Test
+    public void testDoAdapterWithAllMonths() throws Exception {
+        fail();
     }
 }

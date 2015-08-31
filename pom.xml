@@ -9,9 +9,24 @@
     <version>1.0.0</version>
 
     <properties>
+        <jdk.version>1.8</jdk.version>
         <spring.version>4.1.0.RELEASE</spring.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
         <dependency>

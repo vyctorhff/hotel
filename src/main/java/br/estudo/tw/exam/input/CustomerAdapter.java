@@ -21,7 +21,7 @@ public class CustomerAdapter {
     private static final String RESERVATION_DAY_EXPRESSION =
             "(^\\d{2})";
 
-    private static final String RESERVATION_MOTH_EXPRESSION =
+    private static final String RESERVATION_MONTH_EXPRESSION =
             "([A-Z][a-z]{2})";
 
     private static final String RESERVATION_YEAR_EXPRESSION =
@@ -71,7 +71,7 @@ public class CustomerAdapter {
         DateReservation reservation = new DateReservation();
         reservation.setDay(converterToDay(strReservation));
         reservation.setYear(converterToYear(strReservation));
-        reservation.setMoth(converterToMoth(strReservation));
+        reservation.setMoth(converterToMonth(strReservation));
         reservation.setWeekDay(converteToWeekDay(strReservation));
 
         reservations.add(reservation);
@@ -82,9 +82,9 @@ public class CustomerAdapter {
         return WeekDayEnum.getWeekDayByString(strWeekDay);
     }
 
-    private MothEnum converterToMoth(String strReservation) {
-        String strMoth = getStringByExpression(RESERVATION_MOTH_EXPRESSION, strReservation);
-        return MothEnum.getMothByString(strMoth);
+    private MonthEnum converterToMonth(String strReservation) {
+        String strMonth = getStringByExpression(RESERVATION_MONTH_EXPRESSION, strReservation);
+        return MonthEnum.getMothByString(strMonth);
     }
 
     private int converterToYear(String strReservation) {

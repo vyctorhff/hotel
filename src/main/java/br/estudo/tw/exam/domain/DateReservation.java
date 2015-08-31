@@ -6,7 +6,7 @@ package br.estudo.tw.exam.domain;
 public class DateReservation {
     private int day;
     private int year;
-    private MothEnum moth;
+    private MonthEnum moth;
     private WeekDayEnum weekDay;
 
     public int getDay() {
@@ -25,11 +25,11 @@ public class DateReservation {
         this.year = year;
     }
 
-    public MothEnum getMoth() {
+    public MonthEnum getMoth() {
         return moth;
     }
 
-    public void setMoth(MothEnum moth) {
+    public void setMoth(MonthEnum moth) {
         this.moth = moth;
     }
 
