@@ -16,4 +16,13 @@ public enum CustomerTypeEnum {
         return name;
     }
 
+    public static CustomerTypeEnum getCustomerTypByString(String type) {
+        for (CustomerTypeEnum customerType : CustomerTypeEnum.values()) {
+            if (customerType.getDesction().equalsIgnoreCase(type)) {
+                return customerType;
+            }
+        }
+
+        return null;
+    }
 }

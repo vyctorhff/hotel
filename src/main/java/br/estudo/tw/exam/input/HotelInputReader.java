@@ -17,6 +17,9 @@ public interface HotelInputReader {
 
     void read(String input) throws HotelInputException;
 
-    Customer getCustomer();
+    String getCustomerType();
 
+    List<String> getDates();
+
+    void clean();
 }
