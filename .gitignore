@@ -5,3 +5,7 @@
 *.jasper
 
 target/*
+
+# arquivos de ides.
+.idea/*
+
