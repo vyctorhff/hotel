@@ -1,5 +1,7 @@
 package br.estudo.tw.exam.input;
 
+import br.estudo.tw.exam.domain.Customer;
+
 import java.util.List;
 
 /**
@@ -15,8 +17,6 @@ public interface HotelInputReader {
 
     void read(String input) throws HotelInputException;
 
-    String getCustomerType();
-
-    List<String> getDates();
+    Customer getCustomer();
 
 }
