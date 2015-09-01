@@ -6,8 +6,9 @@ package br.estudo.tw.exam.domain;
 public enum WeekDayEnum {
     MONDAY("mon"),
     TUESDAY("tues"),
-    WENDNESDAY("wen"),
+    WEDNESDAY("wed"),
     THURSDAY("thurs"),
+    FRIDAY("fri"),
     SATURDAY("sat"),
     SUNDAY("sun");
 

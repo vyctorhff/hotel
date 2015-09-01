@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 public class BasicInputReader implements HotelInputReader {
 
     private static final String RESERVATION_EXPRESSION =
-            "((\\d{1}|\\d{2})\\w{3}\\d{4}(\\(\\w{3}\\)|\\(\\w{4}\\)))";
+            "((\\d{1}|\\d{2})\\w{3}\\d{4}(\\(\\w{3,5}\\)))";
 
     private String customerType;
     private List<String> dates;

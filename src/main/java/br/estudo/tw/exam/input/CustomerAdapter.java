@@ -20,7 +20,7 @@ public class CustomerAdapter {
             LogUtil.getLogger(CustomerAdapter.class);
 
     private static final String RESERVATION_DAY_EXPRESSION =
-            "(^\\d{2})";
+            "(^\\d{1,2})";
 
     private static final String RESERVATION_MONTH_EXPRESSION =
             "([A-Z][a-z]{2})";
@@ -29,7 +29,7 @@ public class CustomerAdapter {
             "(\\d{4})";
 
     private static final String RESERVATION_WEEK_DAY_EXPRESSION =
-            "\\(([a-z]{3}|[a-z]{4}|[a-z]{5})\\)";
+            "\\(([a-z]{3,5})\\)";
 
     private static final String CUSTOMER_TYPE_INVALID =
             "input.customer_type_invalid";

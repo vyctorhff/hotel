@@ -4,6 +4,7 @@ import br.estudo.tw.exam.domain.*;
 import br.estudo.tw.exam.tests.AbstractTests;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import sun.util.resources.cldr.so.CurrencyNames_so;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -67,7 +68,19 @@ public class CustomerAdapterTest extends AbstractTests {
     @Test
     public void testDoAdapterWithAllMonths() throws Exception {
         Customer customer = getCustomerByFile(super.FILE_INPUT_MONTHS);
-        fail();
+        
+        assertEquals(MonthEnum.values().length, customer.getReservations().size());
+
+        // The order of MonthEnum must bem the same that of the file.
+        Iterator<DateReservation> iterator = customer.getReservations().iterator();
+        for (MonthEnum month : MonthEnum.values()) {
+            if (iterator.hasNext()) {
+                MonthEnum monthEnum = iterator.next().getMoth();
+                assertEquals(month, monthEnum);
+            } else {
+                fail();
+            }
+        }
     }
 
     private Customer getCustomerByFile(String file) throws IOException, HotelInputException {
