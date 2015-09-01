@@ -2,6 +2,7 @@ package br.estudo.tw.exam.input;
 
 import br.estudo.tw.exam.domain.*;
 import br.estudo.tw.exam.util.LogUtil;
+import br.estudo.tw.exam.util.StringUtil;
 import org.apache.commons.lang.StringUtils;
 
 import java.util.ArrayList;
@@ -79,6 +80,8 @@ public class CustomerAdapter {
 
     private WeekDayEnum converteToWeekDay(String strReservation) {
         String strWeekDay = getStringByExpression(RESERVATION_WEEK_DAY_EXPRESSION, strReservation);
+        strWeekDay = StringUtil.removeParentheses(strWeekDay);
+
         return WeekDayEnum.getWeekDayByString(strWeekDay);
     }
 
@@ -98,16 +101,7 @@ public class CustomerAdapter {
     }
 
     private String getStringByExpression(String expression, String input) {
-        Pattern pattern = Pattern.compile(expression);
-        Matcher matcher = pattern.matcher(input);
-
-        while (matcher.find()) {
-            int indexStart = matcher.start();
-            int indexEnd   = matcher.end();
-
-            return input.substring(indexStart, indexEnd);
-        }
-        return null;
+        return StringUtil.getStringByExpression(expression, input);
     }
 
     public Customer getCustomer() {
