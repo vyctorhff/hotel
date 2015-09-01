@@ -4,7 +4,12 @@ package br.estudo.tw.exam.domain;
  * Created by torugo on 30/08/15.
  */
 public enum WeekDayEnum {
-    MONDAY("mon");
+    MONDAY("mon"),
+    TUESDAY("tues"),
+    WENDNESDAY("wen"),
+    THURSDAY("thurs"),
+    SATURDAY("sat"),
+    SUNDAY("sun");
 
     private final String day;
 
@@ -16,9 +21,9 @@ public enum WeekDayEnum {
         return day;
     }
 
-    public static WeekDayEnum getWeekDayByString(String strReservation) {
+    public static WeekDayEnum getWeekDayByString(String strWeekDay) {
         for (WeekDayEnum weekDay : WeekDayEnum.values()) {
-            if (weekDay.getDay().equalsIgnoreCase(strReservation)) {
+            if (weekDay.getDay().equalsIgnoreCase(strWeekDay)) {
                 return weekDay;
             }
         }

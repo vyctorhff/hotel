@@ -28,7 +28,7 @@ public class CustomerAdapter {
             "(\\d{4})";
 
     private static final String RESERVATION_WEEK_DAY_EXPRESSION =
-            "([a-z]{3})";
+            "\\(([a-z]{3}|[a-z]{4}|[a-z]{5})\\)";
 
     private static final String CUSTOMER_TYPE_INVALID =
             "input.customer_type_invalid";
