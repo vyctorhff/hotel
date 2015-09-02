@@ -10,7 +10,9 @@ public enum WeekDayEnum {
     THURSDAY("thurs"),
     FRIDAY("fri"),
     SATURDAY("sat"),
-    SUNDAY("sun");
+    SUNDAY("sun"),
+    WEEKDAY("wd"),
+    WEEKEND("we");
 
     private final String day;
 

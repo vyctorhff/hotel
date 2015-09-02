@@ -13,4 +13,5 @@
 
     <context:annotation-config/>
     <context:component-scan base-package="br.estudo.tw.exam.input"/>
+    <context:component-scan base-package="br.estudo.tw.exam.service"/>
 </beans>
