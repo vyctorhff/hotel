@@ -7,6 +7,7 @@ import com.google.common.base.MoreObjects;
  */
 public class DayRate {
     private double rate;
+    private CustomerTypeEnum type;
     private WeekDayEnum weekDay;
 
     public DayRate() {
@@ -28,10 +29,19 @@ public class DayRate {
         this.weekDay = weekDay;
     }
 
+    public CustomerTypeEnum getType() {
+        return type;
+    }
+
+    public void setType(CustomerTypeEnum type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
         return MoreObjects.toStringHelper(DayRate.class)
                 .add("rate", rate)
+                .add("type", type)
                 .add("weekDay", weekDay)
                 .toString();
     }

@@ -1,5 +1,6 @@
 package br.estudo.tw.exam.service;
 
+import br.estudo.tw.exam.domain.Customer;
 import br.estudo.tw.exam.domain.Hotel;
 
 /**
@@ -7,5 +8,5 @@ import br.estudo.tw.exam.domain.Hotel;
  */
 public interface HotelSelectService {
 
-    Hotel selectCheapest() throws ServiceException;
+    Hotel selectCheapest(Customer customer) throws ServiceException;
 }

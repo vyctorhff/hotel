@@ -7,7 +7,7 @@ public enum WeekDayEnum {
     MONDAY("mon"),
     TUESDAY("tues"),
     WEDNESDAY("wed"),
-    THURSDAY("thurs"),
+    THURSDAY("thur"),
     FRIDAY("fri"),
     SATURDAY("sat"),
     SUNDAY("sun"),
@@ -22,6 +22,16 @@ public enum WeekDayEnum {
 
     public String getDay() {
         return day;
+    }
+
+    public boolean isWeekEnd() {
+        return WEEKEND.equals(this)
+                || SATURDAY.equals(this)
+                || SUNDAY.equals(this);
+    }
+
+    public boolean isWeekDay() {
+        return !isWeekEnd();
     }
 
     public static WeekDayEnum getWeekDayByString(String strWeekDay) {

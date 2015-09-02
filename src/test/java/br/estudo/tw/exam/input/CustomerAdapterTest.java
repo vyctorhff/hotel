@@ -51,11 +51,15 @@ public class CustomerAdapterTest extends AbstractTests {
     public void testDoAdapterWithAllWeekDays() throws Exception {
         Customer customer = getCustomerByFile(super.FILE_INPUT_WEEK_DAYS);
 
-        assertEquals(WeekDayEnum.values().length, customer.getReservations().size());
-
         // The order of WeekDayEnum must bem the same that of the file.
         Iterator<DateReservation> iterator = customer.getReservations().iterator();
+
         for (WeekDayEnum weekDay : WeekDayEnum.values()) {
+            // ignore days not present on file
+            if (weekDay.equals(WeekDayEnum.WEEKDAY) || weekDay.equals(WeekDayEnum.WEEKEND)) {
+                continue;
+            }
+
             if (iterator.hasNext()) {
                 WeekDayEnum weekDay1 = iterator.next().getWeekDay();
                 assertEquals(weekDay, weekDay1);
