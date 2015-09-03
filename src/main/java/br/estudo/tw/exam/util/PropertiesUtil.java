@@ -33,6 +33,8 @@ public class PropertiesUtil {
         try {
             properties.load(
                     Class.class.getResourceAsStream(propPath));
+
+            LOGGER.info("properties load!");
         } catch (IOException e) {
             LOGGER.error(e);
         }

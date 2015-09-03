@@ -29,4 +29,8 @@ public class LogUtil {
     public void error(Exception e) {
         logger.error(e.getMessage(), e);
     }
+
+    public void error(String msg) {
+        logger.error(msg);
+    }
 }

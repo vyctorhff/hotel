@@ -1,5 +1,6 @@
 package br.estudo.tw.exam.util;
 
+import com.google.common.base.Joiner;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
