@@ -1,0 +1,6 @@
+Fixme issus for the project
+
+1) Change log for slf4
+2) Refact for class Main.java
+3) Create test for Main.java
+4) Decide if it's better remove spring
