@@ -7,6 +7,8 @@
 target/*
 
 # arquivos de ides.
+.settings/
+.project
 .idea/*
 *.iml
 
